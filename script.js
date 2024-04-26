@@ -71,6 +71,25 @@ function convertToJson() {
     reader.readAsArrayBuffer(fileInput.files[0]);
 }
 
+// It will help the user to check whether Correct/Valid JSON is handled inside the Editor or not 
+function ValidateJSON() {
+    const jsonOutput=document.getElementById('jsonOutput');
+    try{
+     JSON.parse(jsonOutput.value)
+     alert('JSON is valid')
+    }
+    catch(err){
+       alert('JSON is not valid')
+       console.error('Error validating JSON',err)
+    }
+}
+
+// this will help the user to clear the Json Content present inside the input field 
+function ClearRespone(){
+    const jsonOutput=document.getElementById('jsonOutput');
+    jsonOutput.value='';
+}
+
 
 function copyToClipboard() {
     const jsonOutput = document.getElementById('jsonOutput');
